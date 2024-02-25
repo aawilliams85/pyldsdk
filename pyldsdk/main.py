@@ -15,9 +15,9 @@ from .types import *
 # RockwellAutomation.LogixDesigner.LogixProject.CSClient.dll
 
 class LogixProject(object):
-    def __init__(self, **kwargs):
+    def __init__(self, dll_path: str):
         self.log = []
-        self.dll_path = kwargs.get('dll_path', 'C:\\AAA_LDSDK\\RockwellAutomation.LogixDesigner.LogixProject.CSClient.DLL')
+        self.dll_path = dll_path
         load('coreclr')
         import clr
         clr.AddReference(self.dll_path)

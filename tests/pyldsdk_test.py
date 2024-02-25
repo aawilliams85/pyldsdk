@@ -16,7 +16,7 @@ class pyldsdk_tests(unittest.TestCase):
 
         self.download_folder_path = os.path.join(self.base_path, 'download')
         self.upload_folder_path = os.path.join(self.base_path, 'upload')
-        self.proj = LogixProject()
+        self.proj = LogixProject(self.config_data['dll_path'])
         print('')
 
     def test_download(self):
