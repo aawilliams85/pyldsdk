@@ -52,5 +52,9 @@ docs/_build/
 # Uploads from tests
 /tests/upload/*.*
 
+# BAK files from tests
+/tests/download/*.bak
+/tests/download/*.*BAK*.ACD
+
 # pypi config
 *.pypirc

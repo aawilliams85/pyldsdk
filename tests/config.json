@@ -1,0 +1,16 @@
+{
+    "comms_path": {
+        "good": "HL\\192.168.40.122",
+        "bad": "HL\\192.168.254.254"
+    },
+    "file": {
+        "download": {
+            "good": "AB5069L306ER_v35.ACD",
+            "bad_extension": "AB5069L306ER_v35.xyz",
+            "bad_missing": "AB5069L306ER.ACD"
+        },
+        "upload": {
+            "good": "AB5069L306ER_v35_UL.ACD"
+        }
+    }
+}
