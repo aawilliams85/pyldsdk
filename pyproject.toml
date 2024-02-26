@@ -1,0 +1,15 @@
+[project]
+name = "pyldsdk"
+description = "Python Logix Designer SDK"
+version = "0.0.1"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    { name = "aawilliams85", email = "adair.williams85@gmail.com" }
+]
+dependencies = [
+    "pythonnet"
+]
+
+[project.urls]
+Repository = "https://github.com/aawilliams85/pyldsdk.git"
