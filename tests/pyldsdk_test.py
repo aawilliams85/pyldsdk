@@ -21,7 +21,7 @@ class pyldsdk_tests(unittest.TestCase):
 
     def test_download(self):
         self.download_file_path = os.path.join(self.download_folder_path, self.config_data['file']['download']['good'])
-        self.proj.download(self.download_file_path, self.config_data['comms_path']['good'], require_program_mode=False, end_in_run_mode=True)
+        self.proj.download(self.download_file_path, self.config_data['comms_path']['good'], require_start_in_program_mode=False, require_end_in_run_mode=True)
 
     def test_upload_new(self):
         self.upload_file_path = os.path.join(self.upload_folder_path, self.config_data['file']['upload']['good'])

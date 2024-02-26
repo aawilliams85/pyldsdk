@@ -1,6 +1,6 @@
-# pymeu
+# pyldsdk
 
-PyLDSDK (Python Logix Designer SDK) is a set of helper functions built around pythonnet to interface with Rockwell Automation Logix 5000 PLCs.<br>
+PyLDSDK (Python Logix Designer SDK) is a simple wrapper for some of the features available in Rockwell Automation's Logix Designer SDK v1.01.<br>
 
 Use at your own risk.<br>
 
