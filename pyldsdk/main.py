@@ -1,23 +1,15 @@
+import os
 from pythonnet import load
 from pythonnet import get_runtime_info
 
 from .types import *
 
-# External depdendencies that need to be in the DLL_PATH folder:
-#
-# FtspAdapter.exe
-# Google.Protobuf.dll
-# Grpc.Core.Api.dll
-# Grpc.Net.Client.dll
-# Grpc.Net.Common.dll
-# Microsoft.Extensions.Logging.Abstractions.dll
-# Newtonsoft.Json.dll
-# RockwellAutomation.LogixDesigner.LogixProject.CSClient.dll
-
 class LogixProject(object):
     def __init__(self, dll_path: str):
         self.log = []
+        self.__validate_dll_path(dll_path)
         self.dll_path = dll_path
+
         load('coreclr')
         import clr
         clr.AddReference(self.dll_path)
@@ -64,6 +56,20 @@ class LogixProject(object):
         self.log.append(f'Uploading controller {comms_path} to file {file_path}.')
         self._ldsdk.UploadToNewProjectAsync(file_path, comms_path).Result
     
+    def __validate_dll_path(self, dll_path):
+        dir = os.path.dirname(dll_path)
+        files = ['FtspAdapter.exe',
+                 'Google.Protobuf.dll',
+                 'Grpc.Core.Api.dll',
+                 'Grpc.Net.Client.dll',
+                 'Grpc.Net.Common.dll',
+                 'Microsoft.Extensions.Logging.Abstractions.dll',
+                 'Newtonsoft.Json.dll',
+                 'RockwellAutomation.LogixDesigner.LogixProject.CSClient.dll']
+        for file in files:
+            file_path = os.path.join(dir, file)
+            if not(os.path.exists(file_path)): raise Exception(f'File {file} not found in DLL Path {dll_path}.')
+
     def download(self, file_path: str, comms_path: str, **kwargs):
         require_program_mode = kwargs.get('require_program_mode', True)
         end_in_run_mode = kwargs.get('end_in_run_mode', False)
