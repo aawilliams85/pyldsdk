@@ -1,3 +1,7 @@
+# Deprecated
+
+As of Logix Designer SDK v2.01.00, python clients are supported natively, so this is not useful.
+
 # pyldsdk
 
 PyLDSDK (Python Logix Designer SDK) is a simple wrapper for some of the features available in Rockwell Automation's Logix Designer SDK v1.01.00.<br>
